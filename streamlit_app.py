@@ -10,17 +10,15 @@ import time
 
 import streamlit as st
 
-# Set the configuration to hide the menu and footer
-st.set_page_config(page_title="Your App Title", page_icon=":bar_chart:", initial_sidebar_state="collapsed")
+# Set page configuration (optional, does not affect icons)
+st.set_page_config(page_title="Your App Title", page_icon=":chart_with_upwards_trend:")
 
-# Use CSS to hide other unwanted icons if needed
+# Use CSS to hide the icons
 st.markdown(
     """
     <style>
-    /* Hides the main menu and footer */
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    .css-15zrgzn {display: none !important;} /* Adjust the class names as necessary */
+    .viewerBadge_container__1QSob {display: none !important;} /* Hides Share, Star, GitHub icons */
+    .stActionButton {display: none !important;} /* General hide for buttons */
     </style>
     """,
     unsafe_allow_html=True
