@@ -11,17 +11,17 @@ import time
 st.markdown(
     """
     <style>
-    /* Hides the Streamlit main menu button (hamburger) */
+    /* Hide Streamlit hamburger menu */
     #MainMenu {visibility: hidden;}
 
-    /* Hides the footer */
+    /* Hide the footer */
     footer {visibility: hidden;}
 
-    /* Hides the GitHub icon and Share button */
-    #stActionButton {visibility: hidden;}
-   
-    /* Alternatively, you can set display to none if visibility doesn't work */
-    /* header > div:nth-child(2) > button {display: none;} */
+    /* Hide the buttons in the top right corner */
+    .css-1q1n0ol.egzxvld1 {display: none !important;}
+
+    /* Hide the GitHub icon */
+    .st-emotion-cache-mnu3yk ef3psqc6 {display: none !important;}
     </style>
     """,
     unsafe_allow_html=True
