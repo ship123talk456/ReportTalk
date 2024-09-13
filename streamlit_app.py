@@ -8,20 +8,22 @@ from email.mime.multipart import MIMEMultipart
 from datetime import datetime
 import time
 
+import streamlit as st
+
 st.markdown(
     """
     <style>
-    /* Hide Streamlit hamburger menu */
+    /* Hides the Streamlit main menu button (hamburger) */
     #MainMenu {visibility: hidden;}
 
-    /* Hide the footer */
+    /* Hides the footer */
     footer {visibility: hidden;}
 
-    /* Hide the buttons in the top right corner */
-    .css-1q1n0ol.egzxvld1 {display: none !important;}
+    /* Hides the GitHub icon and Share button */
+    /*header > div:nth-child(2) > button {visibility: hidden;}*/
 
-    /* Hide the GitHub icon */
-    .st-emotion-cache-mnu3yk ef3psqc6 {display: none !important;}
+    /* Alternatively, you can set display to none if visibility doesn't work */
+    header > div:nth-child(2) > button {display: none;} 
     </style>
     """,
     unsafe_allow_html=True
