@@ -12,6 +12,7 @@ st.markdown(
     """
     <style>
     #MainMenu {visibility: hidden;}
+    #GithubIcon {visibility: hidden;}
     footer {visibility: hidden;}
     </style>
     """,
