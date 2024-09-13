@@ -13,17 +13,10 @@ import streamlit as st
 st.markdown(
     """
     <style>
-    /* Hides the Streamlit main menu button (hamburger) */
-    #MainMenu {visibility: hidden;}
-
-    /* Hides the footer */
-    footer {visibility: hidden;}
-
-    /* Hides the GitHub icon and Share button */
-    /*header > div:nth-child(2) > button {visibility: hidden;}*/
-
-    /* Alternatively, you can set display to none if visibility doesn't work */
-    header > div:nth-child(2) > button {display: none;} 
+    /* Hide the top-right icons in Streamlit */
+    .css-1v3fvcr {display: none !important;}
+    .css-1q1n0ol {display: none !important;}
+    .css-18ni7ap {display: none !important;}
     </style>
     """,
     unsafe_allow_html=True
