@@ -20,6 +20,7 @@ st.markdown(
     #MainMenu {visibility: hidden;}
     .viewerBadge_container__1QSob {display: none !important;} /* Hides Share, Star, GitHub icons */
     .stActionButton {display: none !important;} /* General hide for buttons */
+    .styles_terminalButton__JBj5T {display: none !important;}
     </style>
     """,
     unsafe_allow_html=True
