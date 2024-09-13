@@ -17,6 +17,7 @@ st.set_page_config(page_title="Your App Title", page_icon=":chart_with_upwards_t
 st.markdown(
     """
     <style>
+    #MainMenu {visibility: hidden;}
     .viewerBadge_container__1QSob {display: none !important;} /* Hides Share, Star, GitHub icons */
     .stActionButton {display: none !important;} /* General hide for buttons */
     </style>
