@@ -8,6 +8,24 @@ from email.mime.multipart import MIMEMultipart
 from datetime import datetime
 import time
 
+st.markdown(
+    """
+    <style>
+    /* Hides the Streamlit main menu button (hamburger) */
+    #MainMenu {visibility: hidden;}
+
+    /* Hides the footer */
+    footer {visibility: hidden;}
+
+    /* Hides the GitHub icon and Share button */
+    header > div:nth-child(2) > button {visibility: hidden;}
+
+    /* Alternatively, you can set display to none if visibility doesn't work */
+    /* header > div:nth-child(2) > button {display: none;} */
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # 设置数据库连接
 conn = sqlite3.connect('shipping_system.db')
