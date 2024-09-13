@@ -21,7 +21,7 @@ st.markdown(
     .css-1q1n0ol.egzxvld1 {display: none !important;}
 
     /* Hide the GitHub icon */
-    .css-18ni7ap.e8zbici2 {display: none !important;}
+    .st-emotion-cache-q16mip e3g6aar1 {display: none !important;}
     </style>
     """,
     unsafe_allow_html=True
