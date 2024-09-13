@@ -18,8 +18,8 @@ st.markdown(
     footer {visibility: hidden;}
 
     /* Hides the GitHub icon and Share button */
-    header > div:st-emotion-cache-1wbqy5l e3g6aar2 > button {visibility: hidden;}
-
+    #GithubIcon {visibility: hidden;}
+   
     /* Alternatively, you can set display to none if visibility doesn't work */
     /* header > div:nth-child(2) > button {display: none;} */
     </style>
