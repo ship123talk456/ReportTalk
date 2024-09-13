@@ -11,7 +11,7 @@ import time
 import streamlit as st
 
 # Set page configuration (optional, does not affect icons)
-st.set_page_config(page_title="Your App Title", page_icon=":chart_with_upwards_trend:")
+st.set_page_config(page_title="ShipTalk", page_icon=":chart_with_upwards_trend:")
 
 # Use CSS to hide the icons
 st.markdown(
