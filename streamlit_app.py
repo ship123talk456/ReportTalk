@@ -8,24 +8,6 @@ from email.mime.multipart import MIMEMultipart
 from datetime import datetime
 import time
 
-st.markdown(
-    """
-    <style>
-    /* Hide Streamlit hamburger menu */
-    #MainMenu {visibility: hidden;}
-
-    /* Hide the footer */
-    footer {visibility: hidden;}
-
-    /* Hide the buttons in the top right corner */
-    .css-1q1n0ol.egzxvld1 {display: none !important;}
-
-    /* Hide the GitHub icon */
-    .st-emotion-cache-1wbqy5l e3g6aar2 {display: none !important;}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 # 设置数据库连接
 conn = sqlite3.connect('shipping_system.db')
