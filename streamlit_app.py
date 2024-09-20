@@ -492,3 +492,6 @@ def main():
             login()
         elif action == '注册':
             register_company()  
+
+if __name__ == '__main__':
+    main()
