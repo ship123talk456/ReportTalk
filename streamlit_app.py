@@ -415,8 +415,9 @@ def view_reports():
         SELECT reports.id, reports.ship_id, ships.ship_name, reports.report_type, reports.data, reports.status
         FROM reports
         JOIN ships ON reports.ship_id = ships.id
-        WHERE ships.company_id = ? AND reports.status = ?
-        ''', (st.session_state['company_id'], 'submitted')
+        WHERE reports.status = ?
+        ''',
+        ('submitted',)
     ).fetchall()
 
     # 将查询结果转为 DataFrame
@@ -453,7 +454,7 @@ def main():
     #st.title('船舶报告系统')
     # 引入 Font Awesome
     st.markdown(
-        '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">',
+        '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css&#34;&gt;&#39;, 
         unsafe_allow_html=True
     )
     #st.sidebar.markdown("<h1 style='font-size:30px;'>船舶报告系统</h1>", unsafe_allow_html=True)
@@ -497,5 +498,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-        
-
