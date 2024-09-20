@@ -446,19 +446,19 @@ def view_reports():
             st.write(f"**数据:**")
             st.text_area(f"详细内容 (报告 ID: {row['ID']})", row['数据'], height=200)
 
-
-
-
 # Streamlit主界面逻辑
 def main():
     #st.title('船舶报告系统')
     # 引入 Font Awesome
-    st.markdown(
-        '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css&#34;&gt;&#39;, 
-        unsafe_allow_html=True
+   st.markdown(
+    """
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/6en8XCp+HHAAK5GSLf2H2Wz+AU4JZV7dPA" crossorigin="anonymous">
+    """,
+    unsafe_allow_html=True
     )
     #st.sidebar.markdown("<h1 style='font-size:30px;'>船舶报告系统</h1>", unsafe_allow_html=True)
     # 使用 HTML 来设置侧边栏的标题样式，并添加船舶图标
+    
     st.sidebar.markdown(
         '<h1 style="font-size:30px;"><i class="fas fa-ship"></i> 船舶报告系统</h1>',
         unsafe_allow_html=True
