@@ -410,7 +410,7 @@ def view_reports():
     st.subheader('报告查阅')
 
     # 查询所有报告，并获取船舶名称
-     reports = c.execute(
+    reports = c.execute(
         '''
         SELECT reports.id, reports.ship_id, ships.ship_name, reports.report_type, reports.data, reports.status
         FROM reports
