@@ -386,13 +386,13 @@ def view_companies_and_ships():
     st.subheader('查看船公司和船舶')
     
     if st.session_state.get('admin_logged_in', False):
-      companies = c.execute('SELECT * FROM companies').fetchall()
-      for company in companies:
-        st.write(f"公司名称: {company[1]}")
-        ships = c.execute('SELECT * FROM ships WHERE company_id = ?', (company[0],)).fetchall()
-          for ship in ships:
+        companies = c.execute('SELECT * FROM companies').fetchall()
+        for company in companies:
+            st.write(f"公司名称: {company[1]}")
+            ships = c.execute('SELECT * FROM ships WHERE company_id = ?', (company[0],)).fetchall()
+        for ship in ships:
             st.write(f"- 船舶名称: {ship[1]}, IMO编号: {ship[2]}, MMSI: {ship[3]}")
-          else:
+        else:
             st.error('请先登录为管理员。')
 
 
