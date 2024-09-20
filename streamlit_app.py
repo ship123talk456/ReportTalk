@@ -297,7 +297,7 @@ def fill_report():
     # 选择船舶和报告类型
     ship_name = st.selectbox(
         '选择船舶', 
-        [s[1] for s in c.execute('SELECT ship_name FROM ships WHERE company_id = ?', (st.session_state['company_id'],)).fetchall()]
+        [s[0] for s in c.execute('SELECT ship_name FROM ships WHERE company_id = ?', (st.session_state['company_id'],)).fetchall()]
     )
     report_type = st.selectbox(
         '选择报告类型', 
