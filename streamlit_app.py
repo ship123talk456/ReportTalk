@@ -461,7 +461,7 @@ def main():
     if 'logged_in' not in st.session_state:
         st.session_state['logged_in'] = False
 
-     if st.session_state['logged_in']:
+    if st.session_state['logged_in']:
         if 'company_id' in st.session_state:
             page = st.sidebar.radio('🚢选择功能', ['船舶配置', '模板配置', '报告填报', '报告查阅'])
             # 省略其他代码...
