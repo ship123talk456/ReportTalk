@@ -212,10 +212,17 @@ def configure_ships():
 
 # 获取当前公司配置的报告模板
 def get_templates():
-    return c.execute(
-        'SELECT id, report_type, fields FROM report_templates WHERE company_id = ?',
-        (st.session_state['company_id'],)
-    ).fetchall()
+    company_id = st.session_state.get('company_id')
+    if company_id:
+        return c.execute(
+            'SELECT id, report_type, fields FROM report_templates WHERE company_id = ?',
+            (company_id,)
+        ).fetchall()
+    else:
+        # 处理 company_id 不存在的情况
+        st.error('公司ID未找到，请确保已登录并设置了公司ID。')
+        return []
+
 
 # 删除报告模板函数
 def delete_template(template_id):
@@ -454,8 +461,13 @@ def main():
     if 'logged_in' not in st.session_state:
         st.session_state['logged_in'] = False
 
-    if st.session_state['logged_in']:
-        page = st.sidebar.radio('🚢选择功能', ['船舶配置', '模板配置', '报告填报', '报告查阅'])
+     if st.session_state['logged_in']:
+        if 'company_id' in st.session_state:
+            page = st.sidebar.radio('🚢选择功能', ['船舶配置', '模板配置', '报告填报', '报告查阅'])
+            # 省略其他代码...
+        else:
+            st.sidebar.error('未找到公司ID。请重新登录。')
+            st.session_state['logged_in'] = False  # 重置登录状态
      
         if page == '船舶配置':
             configure_ships()
