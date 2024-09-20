@@ -96,7 +96,7 @@ def login():
         result = c.fetchone()
         if result and bcrypt.checkpw(password.encode(), result[1]):
             st.session_state['logged_in'] = True
-            st.session_state['company_id'] = result[0]
+            st.session_state['company_id'] = result[0]  # 确保这里设置了 company_id
             st.success('登录成功！')
             st.rerun()  # 刷新页面         
         else:
