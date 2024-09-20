@@ -297,7 +297,7 @@ def fill_report():
     # 选择船舶和报告类型
     ship_name = st.selectbox(
         '选择船舶', 
-        [s[0] for s in c.execute('SELECT ship_name FROM ships WHERE company_id = ?', (st.session_state['company_id'],)).fetchall()]
+        [s[1] for s in c.execute('SELECT ship_name FROM ships WHERE company_id = ?', (st.session_state['company_id'],)).fetchall()]
     )
     report_type = st.selectbox(
         '选择报告类型', 
@@ -410,14 +410,13 @@ def view_reports():
     st.subheader('报告查阅')
 
     # 查询所有报告，并获取船舶名称
-    reports = c.execute(
+     reports = c.execute(
         '''
         SELECT reports.id, reports.ship_id, ships.ship_name, reports.report_type, reports.data, reports.status
         FROM reports
         JOIN ships ON reports.ship_id = ships.id
-        WHERE reports.status = ?
-        ''',
-        ('submitted',)
+        WHERE ships.company_id = ? AND reports.status = ?
+        ''', (st.session_state['company_id'], 'submitted')
     ).fetchall()
 
     # 将查询结果转为 DataFrame
